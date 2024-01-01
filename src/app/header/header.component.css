@@ -1,0 +1,27 @@
+
+.navbar {
+  background-color: #70aced;
+}
+
+.navbar-brand,
+.navbar-link {
+  color: #fff !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.nav-link.active {
+  color: #fff !important;
+}
+
+.font-weight-bold.text-success {
+  color: #28a745 !important;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff !important;
+}

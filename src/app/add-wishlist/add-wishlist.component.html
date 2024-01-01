@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="eventIdInput" class="form-label">Event ID:</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="eventIdInput" [(ngModel)]="eventIdInput" />
+          <button class="btn btn-primary" (click)="addToWishlist()">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container mt-3">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Event ID</th>
+          <th>Type</th>
+          <th>Title</th>
+          <th>Date and Time (UTC)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of wishlistItems">
+          <td>{{ item.eventId }}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.datetime_utc }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="removeFromWishlist(item.eventId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
