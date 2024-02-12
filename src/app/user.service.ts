@@ -14,8 +14,8 @@ export class UserService {
   loggedIn$ = this.loggedIn.asObservable();
   user = new BehaviorSubject<User | null>(null);
   private apiUrl = 'http://localhost:8080/api/users';
-  private loginUrl = 'http://localhost:8081/api/v1.0/authentication';
-
+  // private loginUrl = 'http://localhost:8081/api/v1.0/authentication';
+   private loginUrl="http://eventapplogin-env.eba-pjvpfrnb.us-east-2.elasticbeanstalk.com/api/v1.0/authentication"
   constructor(private httpClient: HttpClient) { }
 
   registerUser(user: any): Observable<any> {

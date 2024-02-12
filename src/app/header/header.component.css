@@ -1,4 +1,3 @@
-
 .navbar {
   background-color: #70aced;
 }
@@ -24,4 +23,15 @@
   background-color: #dc3545;
   border-color: #dc3545;
   color: #fff !important;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack navigation items vertically */
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center; /* Center links on mobile */
+  }
 }

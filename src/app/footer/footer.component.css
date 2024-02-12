@@ -1,0 +1,36 @@
+/* General Styles */
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  margin: 0;
+  padding: o;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #70aced;
+  padding: 2rem 0;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Existing footer styles */
+.footer-icons a,
+.footer-links a {
+  color: rgb(239, 239, 239);
+  margin-right: 1rem;
+}
+
+.footer-disclaimer {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    margin-left: auto;
+  }
+}

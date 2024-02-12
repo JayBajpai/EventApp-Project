@@ -7,7 +7,12 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-  private baseUrl = 'http://localhost:8082/api/v1.0/events';
+ // private baseUrl = 'http://localhost:8082/api/v1.0/events';
+
+     private baseUrl = "http://eventlist-env.eba-sx2jnavd.eu-west-3.elasticbeanstalk.com/api/v1.0/events";
+  getBaseUrl(): string {
+    return this.baseUrl;
+  }
 
   constructor(private http: HttpClient) {}
 

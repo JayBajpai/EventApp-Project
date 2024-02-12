@@ -22,14 +22,12 @@ export class LoginComponent implements OnInit{
  ngOnInit(): void {
   this.userSubscription = this.userService.user.subscribe((user) => {
     if (user) {
-      // this.router.navigate(['./home']);
-      // console.log('User data after successful login:', user);
+
     }
   });
-
   this.form = this.formBuilder.group({
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    username: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/)]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
   });
 }
 

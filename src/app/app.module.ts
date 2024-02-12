@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth-interceptor.service';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     HeaderComponent,
     EventlistComponent,
-    AddWishlistComponent
+    AddWishlistComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

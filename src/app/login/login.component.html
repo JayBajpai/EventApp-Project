@@ -1,25 +1,72 @@
-<div class="container mt-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+  <style>
+
+      .main-container {
+        background-color: rgb(92, 14, 236);
+        padding: 5%;
+      }
+
+    .container {
+      background-color: #508bfc;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      max-width: 400px;
+      padding: 5%;
+      font-size: small;
+      font-variant: all-small-caps;
+    }
+
+    .container h2 {
+      color: white;
+    }
+
+    .container form {
+      color: white;
+    }
+
+    .container input,
+    .container button {
+      margin-top: 5px;
+    }
+
+    .container .alert {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+<div class="container">
   <h2>User Login</h2>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="mb-3 mt-3">
-      <label for="email" class="form-label">Username:</label>
+      <label for="username" class="form-label">Username:</label>
       <input
-        type="name"
+        type="text"
         class="form-control"
         id="username"
         placeholder="Enter Username"
         formControlName="username"
       />
+      <div *ngIf="form.get('username')?.hasError('required') && form.get('username')?.touched">
+        <div class="alert alert-danger">Username is required</div>
+      </div>
+      <div *ngIf="form.get('username')?.hasError('pattern') && form.get('username')?.touched">
+        <div class="alert alert-danger">Username should have only alphanumeric values</div>
+      </div>
     </div>
-    <div
-      *ngIf="
-        form.controls['username'].invalid && form.controls['username'].touched
-      "
-    >
-      <div class="alert alert-danger">Username is required</div>
-    </div>
+
     <div class="mb-3">
-      <label for="pwd" class="form-label">Password:</label>
+      <label for="password" class="form-label">Password:</label>
       <input
         type="password"
         class="form-control"
@@ -27,13 +74,12 @@
         placeholder="Enter password"
         formControlName="password"
       />
-    </div>
-    <div
-      *ngIf="
-        form.controls['password'].invalid && form.controls['password'].touched
-      "
-    >
-      <div class="alert alert-danger">password is required</div>
+      <div *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+        <div class="alert alert-danger">Password is required</div>
+      </div>
+      <div *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched">
+        <div class="alert alert-danger">Password should be at least 8 characters long</div>
+      </div>
     </div>
 
     <div *ngIf="isError">
@@ -41,10 +87,12 @@
     </div>
 
     <div class="my-4">
-      <a routerLink="/register">Don't have Account?</a>
+      <a routerLink="/register" style="color: black;">Don't have an account?</a>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
+</div>
+</body>
+</html>

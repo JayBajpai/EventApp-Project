@@ -18,15 +18,16 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      username: ['', Validators.required],
-      country: ['', Validators.required],
-      password: ['', Validators.required],
-      emailId: ['', [Validators.email, Validators.required]],
-      phone: ['', Validators.required]
+      firstname: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
+      lastname: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
+      username: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/)]],
+      country: ['', [Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      emailId: ['', [Validators.email, Validators.required, Validators.pattern(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)]],
+      phone: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]]
     });
   }
+
 
   onReset(): void {
     this.submitted = false;

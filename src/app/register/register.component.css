@@ -1,15 +1,37 @@
-body {
-  background-color: #f00;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+main {
+  flex: 1;
+  padding: 50px;
+}
+.container h2 {
+  color: white;
+}
+.container form {
+  color: white;
 }
 
+.main-container {
+  background-color: rgb(92, 14, 236);
+  padding: 5%;
+  font-size: small;
+  font-variant: all-small-caps;
+}
 .container {
   background-color: #5b8ce9;
-  padding: 30px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 5%;
   border-radius: 5px;
-  width: 600px;
+  max-width: 400px;
+  font-size: small;
+  font-variant: all-small-caps;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container h2 {
+    font-size: 18px;
+  }
 }
